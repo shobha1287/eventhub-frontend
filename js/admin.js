@@ -20,7 +20,7 @@ const btnAdd = document.getElementById("btnAddEvent");
 // ---- load events ----
 async function loadEvents() {
   try {
-    const data = await apiFetch("/events");
+    const data = await apiFetch("/api/events");
     const events = Array.isArray(data) ? data : (data.events || []);
 
 
@@ -71,7 +71,7 @@ async function loadEvents() {
         if (!confirm("Delete this event?")) return;
 
         try {
-          await apiFetch(`/admin/events/${id}`, { method: "DELETE" });
+          await apiFetch(`/api/admin/events/${id}`, { method: "DELETE" });
           toast("Event deleted ✅");
           loadEvents();
         } catch (err) {
@@ -128,7 +128,7 @@ btnAdd.onclick = async function () {
   }
 
   try {
-    await apiFetch("/admin/events", {
+    await apiFetch("/api/admin/events", {
       method: "POST",
       body: JSON.stringify(payload),
     });
