@@ -89,7 +89,7 @@ async function loadEvent() {
 
   try {
     // ✅ backend returns object directly
-    const event = await apiFetch(`/events/${id}`);
+    const event = await apiFetch(`/api/events/${id}`);
 
     renderEvent(event);
 
@@ -118,7 +118,7 @@ async function bookTicket(id) {
   const qty = Number(qtySelect.value);
 
   try {
-    await apiFetch(`/events/${id}/book`, {
+    await apiFetch(`/api/events/${id}/book`, {
       method: "POST",
       body: JSON.stringify({ qty }),
     });
