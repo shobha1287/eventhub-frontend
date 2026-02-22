@@ -100,7 +100,7 @@ export function initAuthUI() {
       const password = document.getElementById("loginPassword").value.trim();
 
       try {
-        const data = await apiFetch("/auth/login", {
+        const data = await apiFetch("/api/auth/login", {
           method: "POST",
           body: JSON.stringify({ email, password }),
         });
@@ -129,7 +129,7 @@ export function initAuthUI() {
       const password = document.getElementById("signupPassword").value.trim();
 
       try {
-        const data = await apiFetch("/auth/signup", {
+        const data = await apiFetch("/api/auth/signup", {
           method: "POST",
           body: JSON.stringify({ name, email, password }),
         });
