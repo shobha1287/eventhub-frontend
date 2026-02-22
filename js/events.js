@@ -110,7 +110,7 @@ function renderEvents() {
 
 async function loadEvents() {
   try {
-    const data = await apiFetch("/events");
+    const data = await apiFetch("/api/events");
 
     // 🔥 Your backend returns ARRAY directly
     // not { events: [...] }
