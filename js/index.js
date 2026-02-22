@@ -2,7 +2,7 @@ import { apiFetch } from "./api.js";
 
 async function loadTopEvents() {
   try {
-    const events = await apiFetch("/events");
+    const events = await apiFetch("/api/events");
 
     const topThree = events.slice(0, 3); // get first 3
     const container = document.getElementById("topEventsRow");
