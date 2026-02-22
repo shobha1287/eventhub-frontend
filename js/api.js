@@ -71,14 +71,14 @@ export async function apiFetch(path, options = {}) {
 
 // ---------------- AUTH ----------------
 export async function signup(payload) {
-  return apiFetch("/auth/signup", {
+  return apiFetch("/api/auth/signup", {
     method: "POST",
     body: JSON.stringify(payload),
   });
 }
 
 export async function login(payload) {
-  return apiFetch("/auth/login", {
+  return apiFetch("/api/auth/login", {
     method: "POST",
     body: JSON.stringify(payload),
   });
@@ -86,5 +86,5 @@ export async function login(payload) {
 
 // This is what main.js needs
 export async function getMe() {
-  return apiFetch("/auth/me");
+  return apiFetch("/api/auth/me");
 }
