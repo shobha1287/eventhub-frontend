@@ -13,7 +13,7 @@ if (!user) {
 
 async function loadBookings() {
   try {
-    const bookings = await apiFetch("/bookings/my");
+    const bookings = await apiFetch("/api/bookings/my");
 
     const container = document.getElementById("historyWrap");
     container.innerHTML = "";
